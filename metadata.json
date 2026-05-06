@@ -1,0 +1,12 @@
+{
+  "name": "BioMed Connect",
+  "description": "Intelligent management and prioritization platform for biomedical equipment maintenance. Features automated priority scoring, solution suggestions, and real-time intervention tracking.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "AI-powered Prioritization",
+    "Real-time Dashboard",
+    "Role-based Access Control"
+  ]
+}
