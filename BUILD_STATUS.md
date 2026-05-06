@@ -28,11 +28,14 @@ npm run build
 
 **Why this works**:
 - Netlify automatically runs `npm install` before the build command
-- No need for `npm ci` which requires perfect sync
-- Simpler and more reliable
+- `NPM_CONFIG_PRODUCTION = "false"` ensures devDependencies are installed
+- Tailwind CSS and other build tools are available
 
 ### Node Version
 - **Node 20** (set in netlify.toml and .nvmrc)
+
+### Environment Variables
+- `NPM_CONFIG_PRODUCTION = "false"` - Install devDependencies (Tailwind, PostCSS, etc.)
 
 ### Dependencies Status
 All dependencies properly installed and locked:
@@ -93,6 +96,9 @@ dist/assets/index.js           1,007.87 kB
 ### ✅ Issue 4: Package Lock Out of Sync
 **Fixed**: Regenerated package-lock.json
 
+### ✅ Issue 5: DevDependencies Not Installed
+**Fixed**: Added `NPM_CONFIG_PRODUCTION = "false"` to netlify.toml
+
 ## Files Changed (Final)
 
 ```
@@ -111,7 +117,8 @@ src/index.css      ✅ Standard Tailwind directives
 2. `317db0e` - Switch to Tailwind CSS v3
 3. `0bcdc13` - Update Node version to 20
 4. `1256c28` - Add troubleshooting documentation
-5. `6cd3bea` - **Sync package-lock.json** ← Current fix
+5. `6cd3bea` - Sync package-lock.json
+6. `f2cfd2f` - **Install devDependencies on Netlify** ← Current fix
 
 ## Next Steps
 
@@ -179,7 +186,8 @@ When deployment succeeds, you'll see:
 **Status**: ✅ All issues resolved  
 **Build**: ✅ Tested and working locally  
 **Lockfile**: ✅ Synchronized  
-**Pushed**: ✅ Commit 6cd3bea  
+**DevDeps**: ✅ Will be installed on Netlify  
+**Pushed**: ✅ Commit f2cfd2f  
 **Ready**: ✅ For Netlify deployment  
 
 **Last updated**: May 6, 2026, 11:30 PM
