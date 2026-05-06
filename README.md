@@ -1,12 +1,10 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+<img width="1200" height="475" alt="BioMed Connect Banner" src="https://yz9ad3t0i1.ufs.sh/f/VjzBOjvt3gYitmWo3AhXoGVDB5Ky6IwRq9WsvC1OFfdYSHbu" />
 </div>
 
 # BioMed Connect - Panne Management System
 
 A React + MongoDB application for tracking and managing biomedical equipment failures with AI-powered diagnostics.
-
-[View in AI Studio](https://ai.studio/apps/5b8e9fc2-4c8d-41a3-b205-4bc4212f376b)
 
 ## Getting Started
 
@@ -24,7 +22,7 @@ cp .env.local.example .env.local
 
 Edit `.env.local` and add:
 - Your Gemini API key
-- MongoDB connection string (default provided)
+- Your MongoDB connection string
 - JWT secret for authentication
 
 Start the dev server:
@@ -76,11 +74,16 @@ You need these environment variables:
 # Gemini API key from Google AI Studio
 GEMINI_API_KEY=your_gemini_key_here
 
-# MongoDB connection string (default provided)
-MONGODB_URI=mongodb+srv://VentureLens:4X32tXo3LeytErBx@cluster0.fvcvl.mongodb.net/venturelens?retryWrites=true&w=majority&appName=Cluster0
+# MongoDB connection string (get from MongoDB Atlas)
+MONGODB_URI=your_mongodb_connection_string_here
 
 # JWT secret for authentication (generate a secure random string)
 JWT_SECRET=your-secure-jwt-secret-change-in-production
+```
+
+**Generate a secure JWT secret**:
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
 ## Database

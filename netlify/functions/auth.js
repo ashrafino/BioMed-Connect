@@ -2,8 +2,10 @@ const { MongoClient, ObjectId } = require('mongodb');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://VentureLens:4X32tXo3LeytErBx@cluster0.fvcvl.mongodb.net/venturelens?retryWrites=true&w=majority&appName=Cluster0';
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
+const MONGODB_URI = process.env.MONGODB_URI;
+if (!MONGODB_URI) throw new Error('MONGODB_URI environment variable is not set');
+const JWT_SECRET = process.env.JWT_SECRET;
+if (!JWT_SECRET) throw new Error('JWT_SECRET environment variable is not set');
 const DB_NAME = 'venturelens';
 
 let cachedClient = null;

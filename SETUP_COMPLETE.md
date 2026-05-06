@@ -71,7 +71,7 @@ Set these in Netlify dashboard:
 
 ```env
 GEMINI_API_KEY=your-gemini-api-key
-MONGODB_URI=mongodb+srv://VentureLens:4X32tXo3LeytErBx@cluster0.fvcvl.mongodb.net/venturelens?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URI=your-mongodb-connection-string-here
 JWT_SECRET=your-secure-random-string-here
 ```
 

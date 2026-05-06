@@ -4,13 +4,11 @@ This application uses MongoDB as its database instead of Firebase.
 
 ## Current Configuration
 
-The app is pre-configured with a MongoDB Atlas connection string:
-
-```
-mongodb+srv://VentureLens:4X32tXo3LeytErBx@cluster0.fvcvl.mongodb.net/venturelens?retryWrites=true&w=majority&appName=Cluster0
-```
+The app requires a MongoDB Atlas connection string to be configured via environment variables.
 
 **Database Name**: `venturelens`
+
+**⚠️ SECURITY NOTE**: Never commit your actual MongoDB connection string to git. Always use environment variables.
 
 ## Collections
 
@@ -85,8 +83,8 @@ The app uses **JWT (JSON Web Tokens)** for authentication:
 ## Environment Variables
 
 ```env
-# MongoDB connection string (optional - default provided)
-MONGODB_URI=mongodb+srv://VentureLens:4X32tXo3LeytErBx@cluster0.fvcvl.mongodb.net/venturelens?retryWrites=true&w=majority&appName=Cluster0
+# MongoDB connection string - Get from MongoDB Atlas
+MONGODB_URI=your-mongodb-connection-string-here
 
 # JWT secret for token signing (required for production)
 JWT_SECRET=your-secure-random-string-here

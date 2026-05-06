@@ -7,9 +7,9 @@ export default defineConfig(({mode}) => {
   return {
     plugins: [react()],
     define: {
+      // Only expose client-safe environment variables
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-      'process.env.MONGODB_URI': JSON.stringify(env.MONGODB_URI),
-      'process.env.JWT_SECRET': JSON.stringify(env.JWT_SECRET),
+      // NEVER expose backend secrets like MONGODB_URI or JWT_SECRET to the client
     },
     resolve: {
       alias: {

@@ -9,7 +9,7 @@ This application has been successfully migrated from Firebase to MongoDB.
 ### Database
 - **Before**: Firebase Firestore
 - **After**: MongoDB Atlas
-- **Connection**: `mongodb+srv://VentureLens:4X32tXo3LeytErBx@cluster0.fvcvl.mongodb.net/venturelens`
+- **Connection**: Configured via environment variables (MONGODB_URI)
 
 ### Authentication
 - **Before**: Firebase Authentication (Google Sign-In)
@@ -65,7 +65,7 @@ GEMINI_API_KEY=your-key
 ### After
 ```env
 GEMINI_API_KEY=your-key
-MONGODB_URI=mongodb+srv://VentureLens:4X32tXo3LeytErBx@cluster0.fvcvl.mongodb.net/venturelens?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URI=your-mongodb-connection-string-here
 JWT_SECRET=your-secure-jwt-secret
 ```
 

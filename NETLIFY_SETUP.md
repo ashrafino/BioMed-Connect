@@ -89,10 +89,9 @@ netlify deploy --prod
 
 ### 1. Verify MongoDB Connection
 
-The app is configured to use MongoDB with the connection string:
-```
-mongodb+srv://VentureLens:4X32tXo3LeytErBx@cluster0.fvcvl.mongodb.net/venturelens?retryWrites=true&w=majority&appName=Cluster0
-```
+The app requires a MongoDB connection string to be configured via environment variables.
+
+**⚠️ SECURITY NOTE**: Never commit your actual MongoDB connection string to git. Always use environment variables.
 
 The database will automatically:
 - Create collections (`users`, `pannes`) as needed
@@ -115,7 +114,7 @@ Without this step, Google Sign-In will not work!
 | Variable | Description | Where to Get |
 |----------|-------------|--------------|
 | `GEMINI_API_KEY` | Google Gemini API key | [Get API Key](https://aistudio.google.com/app/apikey) |
-| `MONGODB_URI` | MongoDB connection string | Already provided in code |
+| `MONGODB_URI` | MongoDB connection string | Get from MongoDB Atlas dashboard |
 | `JWT_SECRET` | Secret for JWT tokens | Generate secure random string |
 
 ## Project Structure
